@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "259773488422",
+    "project_id": "privan2",
+    "storage_bucket": "privan2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:259773488422:android:a088f8a9cb6d7e262275e7",
+        "android_client_info": {
+          "package_name": "com.company.privan2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "259773488422-v749mqr9t6tilm642s5c5ismjaq1l1t0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.company.privan2",
+            "certificate_hash": "2733802cecee92d1c844b2c78a9809bef06f7e47"
+          }
+        },
+        {
+          "client_id": "259773488422-p9fjgtlh2eqn20h6qcmvithugfc7def9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYgBBtaJKnWZmHG_lwWFAoNmG61wljRRk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "259773488422-p9fjgtlh2eqn20h6qcmvithugfc7def9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
