@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +22,8 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import static android.content.ContentValues.TAG;
+
 public class ListView_Admin extends AppCompatActivity {
     //Переменная Обновляемый список
     private RecyclerView recyclerView;
@@ -29,6 +32,7 @@ public class ListView_Admin extends AppCompatActivity {
     private DatabaseReference database;
     //Переменная держателя образа элемента
     private ItemViewHolder itemViewHolder;
+    private FirebaseRecyclerAdapter firebaseRecyclerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +74,11 @@ public class ListView_Admin extends AppCompatActivity {
 
             @Override
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                int position=viewHolder.getAdapterPosition();
 
+                Log.d(TAG,"Позиция элемента "+((FirebaseRecyclerAdapter)recyclerView.getAdapter()).getRef(position));
+                //database.child().removeValue();
+                ((FirebaseRecyclerAdapter)recyclerView.getAdapter()).getRef(position).removeValue();
             }
         }).attachToRecyclerView(recyclerView);
     }
@@ -103,6 +111,7 @@ public class ListView_Admin extends AppCompatActivity {
                 return itemViewHolder;
             }
         };
+        firebaseRecyclerAdapter=adapter;
         recyclerView.setAdapter(adapter);//Устанавливаем адаптер
         adapter.startListening();//на адаптер устанавливаем слушатель,когда данные будут меняться,это сразу отобразиться,воть
         //Все тоже самое и в списке для юзера
